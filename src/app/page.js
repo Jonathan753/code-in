@@ -2,10 +2,13 @@ import React from 'react';
 import styles from "../../styles/page.module.css";
 import MainContainer from '../../components/MainContainer';
 import Form from '../../components/Form';
-import Image from 'next/image';
-import teste from '../../public/teste.png'
+import { useState } from 'react';
+import { QRCode } from 'qrcode';
 
-const Home = () => {
+export default function Home() {
+
+  const [qrCodeDataUrl, setQrCodeDataUrl] = useState('');
+
   const handleSubmit = async (dataForms) => {
     try {
       const response = await fetch('/api/gerarQRCode', {
@@ -26,9 +29,7 @@ const Home = () => {
       console.error('Erro ao enviar dados do formulário:', error);
     }
   };
-}
 
-export default function Home() {
   return (
     <>
       <MainContainer>
@@ -36,12 +37,14 @@ export default function Home() {
           <div className={styles.main}>
             <Form onSubmit={handleSubmit} className={styles.forms} />
             <span className={styles.vertical_line}>-</span>
-            <Image className={styles.qrcode}
-              src={teste}
-              alt='teste'
-              width={200}
-              height={200}
-            />
+            <div>
+              {qrCodeDataUrl && ( // Verifica se há um QR Code para exibir
+                <div>
+                  <h2>QR Code Gerado:</h2>
+                  <QRCode value={qrCodeDataUrl} /> {/* Exibe o QR Code */}
+                </div>
+              )}
+            </div>
           </div>
         </section>
       </MainContainer>

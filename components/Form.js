@@ -1,19 +1,21 @@
 import styles from '../styles/form.module.css'
 import { useState } from 'react';
 
-const Form = ({ onSubmit }) => {
+
+export default function Form({ onSubmit }) {
+
     const [name, setName] = useState('');
     const [birth, setBirth] = useState('');
     const [adress, setAdress] = useState('');
     const [phone, setPhone] = useState('');
-}
 
-const handleSubmit = (event) => {
-    event.preventDefault();
-    onSubmit({ name, birth, adress, phone })
-}
 
-export default function Form() {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onSubmit({ name, birth, adress, phone })
+    }
+
+
     return (
         <>
             <form className={styles.form}>
