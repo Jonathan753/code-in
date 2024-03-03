@@ -1,0 +1,32 @@
+/* components/Navbar.module.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #172554;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    flex: 1;
+}
+
+.navButtons {
+    display: flex;
+}
+
+
+.link {
+    padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .navButtons {
+        display: none;
+
+    }
+}

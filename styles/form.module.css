@@ -1,0 +1,32 @@
+.form {
+    display: grid;
+    position: relative;
+    left: 0;
+}
+
+.form_section {
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    width: 300px;
+    padding: 5px;
+}
+
+.label{
+    margin-right: 10px;
+    width: 25%;
+}
+
+.input {
+    width: 100%;
+
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px; /* Valor alto para bordas mais arredondadas */
+    outline: none;
+}
+
+.input:focus {
+    border-color: dodgerblue;
+    /* Adicione outros estilos desejados para o foco */
+}
