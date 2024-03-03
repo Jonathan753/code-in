@@ -1,0 +1,76 @@
+/* components/Navbar.module.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #172554;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  flex: 1;
+}
+
+.navButtons {
+  display: flex;
+} 
+
+
+.link{
+padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .navButtons {
+    display: none;
+    
+  }
+}
+
+/* fim */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1100px; /* Defina a largura máxima do container conforme necessário */
+  width: 100%;
+  border-radius: 10px; /* Define o raio das bordas */
+  background-color: #ffffff; /* Cor de fundo do container */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar o container */
+}
+
+
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .vercelLogo {
+    filter: invert(1);
+  }
+
+  .logo {
+    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
